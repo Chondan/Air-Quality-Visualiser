@@ -169,7 +169,7 @@
             const aqiValue = document.querySelector("div#aqi div");
             const response = new Promise((resolve, reject) => {
                 const res = fetch(
-                    `http://api.airvisual.com/v2/city?city=${cityInput}&state=${stateInput}&country=${countryInput}&key=${apiKey}`
+                    `https://api.airvisual.com/v2/city?city=${cityInput}&state=${stateInput}&country=${countryInput}&key=${apiKey}`
                 ).then(resolve);
             }).then(data => data.json()).then(dataList => {
                 const { data: { current : { pollution, weather } } } = dataList;
