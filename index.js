@@ -61,9 +61,15 @@
         return arr;
     }
     async function setup() {
-        countriesJson = await getJsonData('./json/countries.json');
-        statesJson = await getJsonData('./json/states.json');
-        citiesJson = await getJsonData('./json/cities.json'); 
+        // countriesJson = await getJsonData('./json/countries.json');
+        // statesJson = await getJsonData('./json/states.json');
+        // citiesJson = await getJsonData('./json/cities.txt'); 
+        const countryRes = await fetch("https://raw.githubusercontent.com/Chondan/Air-Quality-Visualiser/master/json/countries.json");
+        countriesJson = await countryRes.json();
+        const stateRes = await fetch("https://raw.githubusercontent.com/Chondan/Air-Quality-Visualiser/master/json/states.json");
+        statesJson = await stateRes.json();
+        const cityRes = await fetch("https://raw.githubusercontent.com/Chondan/Air-Quality-Visualiser/master/json/cities.txt");
+        citiesJson = await cityRes.json();
     }
     function loadDataToDropDown(className, dataList) {
         // load data to dropdown
@@ -184,7 +190,6 @@
                         'var(--bad-aqi-color)'
                     );
                 }
-                console.log("XXXX");
                 aqiValue.innerHTML = pollution.aqius;
                 document.getElementById("temp-value").innerHTML = `${weather.tp} &#8451`;
                 document.getElementById("humidity-value").innerHTML = `${weather.hu} %`;
