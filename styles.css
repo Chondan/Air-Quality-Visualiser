@@ -1,0 +1,145 @@
+:root {
+    --good-aqi-color: lightgreen;
+    --medium-aqi-color: rgb(247, 247, 121);
+    --bad-aqi-color: rgb(238, 116, 116);
+    --aqi-color: var(--medium-aqi-color);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div.form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    height: 20vh;
+}
+div.country, div.state, div.city {
+    display: inline-block;
+    margin: auto 5px;
+    width: 30%;
+    box-shadow: 2px 2px 4px rgb(110, 104, 104);
+    background-color: lightgreen;
+}
+input {
+    width: 100%;
+    text-indent: 5%;
+    padding: 10px;
+    outline: none;
+    transition: width 1s;
+    border: none;
+
+}
+input:focus {
+    width: 30%;
+}
+div.dropdown {
+    display: none;
+    max-height: 100px;
+    position: absolute;
+    width: 30%;
+    z-index: 5;
+    background-color: white;
+    border: 1px solid #ddd;
+    overflow: auto;
+}
+ul {
+    list-style: none;
+}
+li {
+    margin-top: 2px;
+    text-indent: 5%;
+    cursor: pointer;
+    /* border: 1px solid yellow; */
+}
+li:hover {
+    background-color: #ddd;
+}
+div.air-visualiser {
+    margin: 30px auto;
+    width: 90%;
+    height: 50vh;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+div.air-visualiser::after {
+    content: "SHOW";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+
+}
+div.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 2s;
+    box-shadow: 2px 2px 4px rgb(110, 104, 104);
+    border-radius: 20px;
+}
+div#aqi {
+    width: 100%;
+    height: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5em;
+    background-color: var(--aqi-color);
+    border-radius: 20px 20px 0 0 ;
+}
+div#info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+    font-size: 1.2em;
+}
+div#info div {
+    width: 33.3333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+div#temp div {
+    width: 100%;
+    display: block;
+}
+div#humidity div {
+    width: 100%;
+    display: block;
+} 
+div#wind div {
+    width: 100%;
+    display: block;
+}
+header {
+    padding: 5px;
+    margin-top: 15px;
+    text-align: center;
+}
+div.warning {
+    text-align: center;
+    color: red;
+}
+@media screen and (max-width: 500px) {
+    div.form {
+        flex-direction: column;
+        width: 100%;
+    }
+    div.country, div.state, div.city {
+        width: 95%;
+        margin: 5px auto;
+    }
+    div.dropdown {
+        width: 80%;
+    }
+}

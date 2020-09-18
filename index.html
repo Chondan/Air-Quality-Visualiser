@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Air Visualiser</title>
+</head>
+<body>
+    <header>AIR QUALITY VISUALISER</header>
+    <div class="form">
+        <div class="country">
+            <input class="country" type="text" placeholder="...Country">
+            <div class="dropdown">
+                <ul></ul>
+            </div>
+        </div>
+        <div class="state">
+            <input class="state" type="text" placeholder="...State">
+            <div class="dropdown">
+                <ul></ul>
+            </div>
+        </div>
+        <div class="city">
+            <input class="city" type="text" placeholder="...City">
+            <div class="dropdown">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+    <div class="warning"></div>
+    <div class="air-visualiser">
+        <div class="card">
+            <div id="aqi">
+                <div></div>
+                <div>US AQI</div>
+            </div>
+            <div id="info">
+                <div id="temp">
+                    <div>Temp</div>
+                    <div id="temp-value"></div>
+                </div>
+                <div id="humidity">
+                    <div>Humidity</div>
+                    <div id="humidity-value"></div>
+                </div>
+                <div id="wind">
+                    <div>Wind</div>
+                    <div id="wind-value"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
